@@ -1,0 +1,9 @@
+.bg-gradient {
+    background: linear-gradient(to right, #C83138, white);
+  }
+  
+  .delta-icon {
+    width: 7%;
+    height: auto; /* This ensures the aspect ratio is maintained */
+  }
+  
