@@ -7,3 +7,22 @@
     height: auto; /* This ensures the aspect ratio is maintained */
   }
   
+  .card {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+.card-title, .card-text {
+    font-weight: bold;  /* Make labels bold */
+}
+
+.card .card-body p {
+    margin-bottom: 10px;
+}
+
+.delta-icon {
+    height: 16px;
+    width: auto;
+    margin-left: 5px;
+}
+

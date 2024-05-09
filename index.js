@@ -2,11 +2,12 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const verifyToken = require('./src/middleware/verifyToken');
+require('dotenv').config();
+
 const appRoutes = require('./src/routes');
 
 const cookieParser = require('cookie-parser');
 
-require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
@@ -38,7 +39,14 @@ app.use(express.static(path.join(__dirname, 'html')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'src/html', 'log-in.html'));
 });
+
+app.get('/dashboard', verifyToken, (req, res) => {
+  res.sendFile(path.join(__dirname, 'src/html',  'main.html'));
+});
+
 app.use('/api', appRoutes);
+
+
 
 // Listen on the specified port
 app.listen(PORT, () => {

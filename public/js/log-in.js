@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (response.ok) {
-                window.location.href = '/api/dashboard';  
+                window.location.href = '/dashboard';  
             } else {
                 
                 const errorText = await response.text();
