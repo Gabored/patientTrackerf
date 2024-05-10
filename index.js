@@ -25,8 +25,9 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Middleware to protect routes except for login and root
 app.use((req, res, next) => {
-    if (req.path !== '/' && req.path !== '/api/login') {
-        verifyToken(req, res, next);
+    if (req.path !== '/' && req.path !== 'api/login') {
+        //verifyToken(req, res, next);
+        next();
     } else {
         next();  // Skip verifyToken if the route is "/" or "/login"
     }

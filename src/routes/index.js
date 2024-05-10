@@ -7,11 +7,13 @@ const loginMiddleware = require('../middleware/log-in');
 const logoutMiddleware = require('../middleware/log-out');
 
 
-router.post('/login', loginMiddleware);  
-router.get('/logout', logoutMiddleware);
+
 
 router.use('/users', usersRoutes);
 router.use('/credentials', credentialsRoutes);
 router.use('/notes', notesRoutes);
+
+router.post('/login', loginMiddleware);  
+router.get('/logout', logoutMiddleware);
 
 module.exports = router;
